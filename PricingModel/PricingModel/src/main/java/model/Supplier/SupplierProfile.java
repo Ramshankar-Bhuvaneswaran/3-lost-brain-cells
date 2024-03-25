@@ -1,34 +1,29 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model.Supplier;
 
 import java.util.ArrayList;
 import model.Personnel.Person;
-
+import model.Personnel.Profile;
 import model.ProductManagement.ProductCatalog;
 import model.ProductManagement.ProductSummary;
 import model.ProductManagement.ProductsReport;
 
 /**
  *
- * @author kal bugrara
+ * @author manju
  */
-public class Supplier {
-
-    public SupplierProfile getSp() {
-        return sp;
-    }
-    SupplierProfile sp;
+public class SupplierProfile extends Profile {
     ProductCatalog productcatalog;
     ProductsReport productsreport;
-    public Supplier(Person n){
-        SupplierProfile sp1 = new SupplierProfile(n);
-        this.sp=sp1;
-        productcatalog = new ProductCatalog("software");
-        
+    Person p1;
+
+    public SupplierProfile(Person p) {
+        super(p);
+        p1=p;
+        productcatalog = new ProductCatalog();
     }
     
     public ProductsReport prepareProductsReport(){
@@ -45,17 +40,18 @@ public class Supplier {
     }
     
     public String getName(){
-        return sp.getPerson().getPersonId();
+        return p1.getPersonId();
     }
         public ProductCatalog getProductCatalog(){
         return productcatalog;
     }
-    //add supplier product ..
     
-    //update supplier product ...
+    
+
     @Override
-   public String toString(){
-       return sp.getPerson().getPersonId();
-       
-   }
+    public String getRole() {
+    
+        return "Supplier";
+    }
+    
 }

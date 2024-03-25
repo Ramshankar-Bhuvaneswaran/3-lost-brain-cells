@@ -17,15 +17,36 @@ import model.Personnel.Person;
  */
 public class CustomerProfile {
     ArrayList<Order> orders;
+
+    public ArrayList<Order> getOrders() {
+        return orders;
+    }
     ArrayList<Market> markets;
     
     Person person;
+    int age;
+    String gen;
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getGen() {
+        return gen;
+    }
+
+    public void setGen(String gen) {
+        this.gen = gen;
+    }
     public CustomerProfile(Person p) {
 
         person = p;
         orders = new ArrayList();
-
+        
     }
 
            
