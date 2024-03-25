@@ -7,7 +7,16 @@ package ui.sales;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import model.Business.Business;
+import model.CustomerManagement.CustomerDirectory;
 import model.CustomerManagement.CustomerProfile;
+import model.OrderManagement.MasterOrderList;
+import model.OrderManagement.Order;
+import model.Personnel.Person;
+import model.Personnel.PersonDirectory;
+import model.ProductManagement.ProductCatalog;
+import model.SalesManagement.SalesPersonProfile;
+import model.Supplier.SupplierDirectory;
+import model.Supplier.SupplierProfile;
 
 /**
  *
@@ -20,13 +29,14 @@ public class Salesworkpanel extends javax.swing.JPanel {
      */
     JPanel userProcessContainer;
     Business business;
+    SalesPersonProfile sales;
  
 
-    public Salesworkpanel(JPanel u, Business d) {
+    public Salesworkpanel(JPanel u, Business d, SalesPersonProfile s) {
 initComponents();   
     business=d;
     userProcessContainer=u;
-    
+    sales=s;
     
     }
 
@@ -41,7 +51,7 @@ initComponents();
 
         jLabel1 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        Sim1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
 
@@ -51,9 +61,14 @@ initComponents();
 
         jButton1.setText("Suppliers and Products list");
 
-        jButton2.setText("Exiting Customers ");
+        Sim1.setText("Run Simulation 1");
+        Sim1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Sim1ActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("Browse product Price performance");
+        jButton3.setText("Sales Dashboard");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -73,36 +88,29 @@ initComponents();
             .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addGap(255, 255, 255)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextField1)
+                    .addComponent(Sim1, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE))
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(34, 34, 34)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(193, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                    .addContainerGap(448, Short.MAX_VALUE)
                     .addComponent(jButton3)
-                    .addGap(187, 187, 187)))
+                    .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 209, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(193, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(69, 69, 69)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
+                .addGap(68, 68, 68)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(76, 76, 76)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Sim1, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(321, Short.MAX_VALUE))
-            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(layout.createSequentialGroup()
-                    .addGap(122, 122, 122)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(435, Short.MAX_VALUE)))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -112,7 +120,7 @@ initComponents();
             return;}
         CustomerProfile cp = business.getCustomerDirectory().findCustomer(s);
         productperformanceJPanel cwjp = new productperformanceJPanel(userProcessContainer, business,cp);
-            userProcessContainer.removeAll();
+//            userProcessContainer.removeAll();
             userProcessContainer.add("ppj", cwjp);
             ((java.awt.CardLayout) userProcessContainer.getLayout()).next(userProcessContainer);
     }//GEN-LAST:event_jButton3ActionPerformed
@@ -121,10 +129,35 @@ initComponents();
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    private void Sim1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sim1ActionPerformed
+        // TODO add your handling code here:
+        MasterOrderList mol =  business.getMasterOrderList();
+        PersonDirectory persondirectory = business.getPersonDirectory();
+        Person p17 = persondirectory.newPerson("Ryan Gonzalez");
+        Person p18 = persondirectory.newPerson("Taylor Flores");
+        Person p19 = persondirectory.newPerson("Justin Nguyen");
+        Person p20 = persondirectory.newPerson("Hannah Kim");
+        
+        SupplierDirectory supplierdirectory = business.getSupplierDirectory();
+        SupplierProfile supp= supplierdirectory.findSupplier("Will");
+        
+        CustomerDirectory customerdirectory = business.getCustomerDirectory();
+        CustomerProfile customerprofile0 = customerdirectory.newCustomerProfile(p17);
+        CustomerProfile customerprofile1 = customerdirectory.newCustomerProfile(p18);
+        
+        ProductCatalog pc = supp.getProductCatalog();
+        Order order1 = mol.newOrder(customerprofile0,sales);
+        
+        order1.newOrderItem(newProduct1,1050 ,3);
+        Order order1 = mol.newOrder(customerprofile0,salesperson1);
+        
+        order1.newOrderItem(newProduct1,1050 ,3); 
+    }//GEN-LAST:event_Sim1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Sim1;
     private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JTextField jTextField1;

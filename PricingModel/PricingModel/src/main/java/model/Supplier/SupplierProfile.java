@@ -18,6 +18,10 @@ import model.ProductManagement.ProductsReport;
 public class SupplierProfile extends Profile {
     ProductCatalog productcatalog;
     ProductsReport productsreport;
+
+    public Person getP1() {
+        return p1;
+    }
     Person p1;
 
     public SupplierProfile(Person p) {
