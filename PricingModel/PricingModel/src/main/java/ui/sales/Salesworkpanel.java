@@ -11,8 +11,10 @@ import model.CustomerManagement.CustomerDirectory;
 import model.CustomerManagement.CustomerProfile;
 import model.OrderManagement.MasterOrderList;
 import model.OrderManagement.Order;
+import model.OrderManagement.OrderItem;
 import model.Personnel.Person;
 import model.Personnel.PersonDirectory;
+import model.ProductManagement.Product;
 import model.ProductManagement.ProductCatalog;
 import model.SalesManagement.SalesPersonProfile;
 import model.Supplier.SupplierDirectory;
@@ -146,14 +148,31 @@ initComponents();
         CustomerProfile customerprofile1 = customerdirectory.newCustomerProfile(p18);
         
         ProductCatalog pc = supp.getProductCatalog();
+        Product p2= pc.getProductList().get(3);
+        Product p1= pc.getProductList().get(2);
+        
+        Product p3= pc.getProductList().get(4);        
+        Product p4= pc.getProductList().get(5);
+        Product p5= pc.getProductList().get(6);
+        
         Order order1 = mol.newOrder(customerprofile0,sales);
-        
-        order1.newOrderItem(newProduct1,1050 ,3);
-        Order order1 = mol.newOrder(customerprofile0,salesperson1);
-        
-        order1.newOrderItem(newProduct1,1050 ,3); 
-    }//GEN-LAST:event_Sim1ActionPerformed
+        order1.newOrderItem(p1,p1.getTargetPrice()-300 ,3);
+        order1.newOrderItem(p5, p5.getTargetPrice()+500,2);
+        order1.newOrderItem(p4, p4.getTargetPrice()+200,2);
 
+        
+        Order order2 = mol.newOrder(customerprofile1,sales);
+        order2.newOrderItem(p2,p2.getTargetPrice()+230 ,3); 
+        order2.newOrderItem(p3, p3.getTargetPrice()-150, 1);
+        
+//        for(){}
+        if(order1.isOrderAboveTotalTarget()){}
+    }//GEN-LAST:event_Sim1ActionPerformed
+public OrderItem Targetvar(OrderItem a){
+    
+    
+        return null;
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Sim1;
