@@ -69,7 +69,7 @@ public class ConfigureABusiness {
         
         
       
-        SupplierProfile supplier2 = supplierdirectory.newSupplier(person003);
+        SupplierProfile supplier2 = supplierdirectory.newSupplier(person005);
         
         
     
