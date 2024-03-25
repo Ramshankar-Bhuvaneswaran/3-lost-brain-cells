@@ -17,6 +17,10 @@ public class SupplierDirectory {
     public SupplierDirectory(){
         suppliers = new ArrayList();
     }
+
+    public ArrayList<SupplierProfile> getSuppliers() {
+        return suppliers;
+    }
 //    public Supplier newSupplier(String n){
 //        Supplier supplier = new Supplier(n);
 //        suppliers.add(supplier);

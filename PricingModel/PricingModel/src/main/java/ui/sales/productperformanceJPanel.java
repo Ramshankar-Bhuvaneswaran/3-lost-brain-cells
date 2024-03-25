@@ -357,7 +357,7 @@ public class productperformanceJPanel extends javax.swing.JPanel {
         MasterOrderList mol =  bb.getMasterOrderList();
         Order order1 = mol.newOrder(cust);
         order1.newOrderItem(s,actp,quant);
-        cust.addCustomerOrder(order1);
+//        cust.addCustomerOrder(order1);
         refreshorder();
     }//GEN-LAST:event_btnAddActionPerformed
 
@@ -386,7 +386,7 @@ public void refreshorder(){
            row[3] = l.getOrderItemTotal();    
 //           row[4]=p.;
 
-            ((DefaultTableModel) tblCatalog.getModel()).addRow(row);
+            ((DefaultTableModel) jTable2.getModel()).addRow(row);
    
              
              

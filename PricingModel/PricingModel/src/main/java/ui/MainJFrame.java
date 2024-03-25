@@ -159,8 +159,8 @@ public class MainJFrame extends javax.swing.JFrame {
 
         }
         if (profile instanceof SalesPersonProfile) {
-
-            Salesworkpanel cwjp = new Salesworkpanel(userProcessContainer, business);
+            SalesPersonProfile s= business.getSalesPersonDirectory().findSalesPerson(profile.getPerson().getPersonId());
+            Salesworkpanel cwjp = new Salesworkpanel(userProcessContainer, business,s);
             userProcessContainer.removeAll();
             userProcessContainer.add("sales", cwjp);
             ((java.awt.CardLayout) userProcessContainer.getLayout()).next(userProcessContainer);
