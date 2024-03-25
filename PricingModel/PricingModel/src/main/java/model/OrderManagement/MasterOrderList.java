@@ -23,6 +23,14 @@ public class MasterOrderList {
         orders = new ArrayList();
        
     }
+    public Order newOrder(CustomerProfile cp, SalesPersonProfile spp){
+        Order o= new Order(cp, spp);
+        orders.add(o);
+        return o;
+            
+ 
+    }
+    
     
     public Order newOrder(CustomerProfile cp){
         Order o= new Order(cp);
@@ -31,13 +39,7 @@ public class MasterOrderList {
             
  
     }
-    public Order newOrder(CustomerProfile cp, SalesPersonProfile spp){
-        Order o= new Order(cp, spp);
-        orders.add(o);
-        return o;
-            
- 
-    }
+    
     
     public MasterOrderReport generateMasterOrderReport(){
     masterorderreport = new MasterOrderReport();
