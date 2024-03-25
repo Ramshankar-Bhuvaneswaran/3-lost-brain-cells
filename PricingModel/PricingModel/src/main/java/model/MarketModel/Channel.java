@@ -10,5 +10,36 @@ package model.MarketModel;
  * @author kal bugrara
  */
 public class Channel {
-    
+       String channeltype;  
+    int price;
+
+    public String getChanneltype() {
+        return channeltype;
+    }
+
+    public void setChanneltype(String channeltype) {
+        this.channeltype = channeltype;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
+    }
+
+
+public Channel(String t,int p){
+        channeltype = t;
+        price=p;
+        
+        
+        
+    }
+
+
+
+
+
 }
