@@ -43,7 +43,7 @@ public class CustomerDirectory {
         }
             return null; //not found after going through the whole list
          }
-        public CustomersReport generatCustomerPerformanceReport(){
+    public CustomersReport generatCustomerPerformanceReport(){
         CustomersReport customersreport = new CustomersReport();
     
         for(CustomerProfile cp: customerlist){
@@ -53,4 +53,5 @@ public class CustomerDirectory {
         }
         return customersreport; 
     } 
+
 }

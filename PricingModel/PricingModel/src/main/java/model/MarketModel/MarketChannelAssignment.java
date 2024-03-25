@@ -13,6 +13,9 @@ public class MarketChannelAssignment {
     
     Market market;
     Channel channel;
+    int adbudget;
+    int targetrevenue;
+    
     
     public MarketChannelAssignment(Market m, Channel c){
         

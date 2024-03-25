@@ -50,5 +50,8 @@ public class ProductCatalog {
     public ArrayList<Product> getProductList(){
         return products;
     }
+    public void Deleteproduct(Product p){
+        products.remove(p);
+    }
 
 }
