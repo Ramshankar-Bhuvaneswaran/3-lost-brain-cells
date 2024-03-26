@@ -18,6 +18,10 @@ import model.SalesManagement.SalesPersonProfile;
  */
 public class Order {
 
+    public ArrayList<OrderItem> getOrderitems() {
+        return orderitems;
+    }
+
     ArrayList<OrderItem> orderitems;
     CustomerProfile customer;
     SalesPersonProfile salesperson;
@@ -72,8 +76,24 @@ public class Order {
             }
         }
         return sum;
+    }public void deleteItem(OrderItem item)
+    {
+        
+        orderitems.remove(item);     
     }
     
+    
+//    public OrderItem findProduct(Product product){
+//        
+//        for(OrderItem oi: this.getOrderItemList()){
+//            
+//            if(oi.getSelectedProduct().equals(product)){
+//                return oi;
+//            }
+//        }
+//        return null;
+//    }
+  
     //sum all the item targets and compare to the total of the order 
     public boolean isOrderAboveTotalTarget(){
         int sum = 0;

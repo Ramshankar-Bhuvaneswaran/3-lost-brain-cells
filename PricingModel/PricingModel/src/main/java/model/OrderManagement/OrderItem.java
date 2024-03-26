@@ -21,7 +21,7 @@ public class OrderItem {
         selectedproduct = p;
         p.addOrderItem(this); //make sure product links back to the item
         quantity = q;
-        this.actualPrice = paidprice;
+        this.actualPrice = paidprice;   
     }
 
     public int getOrderItemTotal() {
@@ -78,5 +78,8 @@ public class OrderItem {
     public int getQuantity() {
         return quantity;
     }
-    
+    @Override
+    public String toString(){
+        return selectedproduct.toString();
+    }
 }
