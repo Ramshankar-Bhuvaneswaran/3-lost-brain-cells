@@ -23,6 +23,10 @@ public class Order {
     }
 
     ArrayList<OrderItem> orderitems;
+
+    public CustomerProfile getCustomer() {
+        return customer;
+    }
     CustomerProfile customer;
     SalesPersonProfile salesperson;
     MarketChannelAssignment mca;
