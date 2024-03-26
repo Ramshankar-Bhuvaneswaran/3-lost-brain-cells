@@ -66,13 +66,45 @@ public class ConfigureABusiness {
         
         SalesPersonDirectory spd =business.getSalesPersonDirectory();
         SalesPersonProfile salesperson1 = spd.newSalesPersonProfile(person016);
+       
         
+   SupplierProfile accessories = supplierdirectory.newSupplier(person008);
+         // For the supplier 'accessories'
+        ProductCatalog pcAccessories = accessories.getProductCatalog();
+        Product accessory1 = pcAccessories.newProduct("Wireless Earbuds", 50, 60, 70);
+        Product accessory2 = pcAccessories.newProduct("Phone Cases", 10, 15, 20);
+        Product accessory3 = pcAccessories.newProduct("Charging Cables", 15, 20, 25);
+        Product accessory4 = pcAccessories.newProduct("headset", 300, 400, 500);
+        Product accessory5 = pcAccessories.newProduct("Screen Guard", 10, 15, 20);
         
-      
-        SupplierProfile supplier2 = supplierdirectory.newSupplier(person005);
+        SupplierProfile laptops = supplierdirectory.newSupplier(person004);
+// For the supplier 'laptops'
+        ProductCatalog pcLaptops = laptops.getProductCatalog();
+        Product laptop1 = pcLaptops.newProduct("MacBook Pro", 1500, 1600, 1700);
+        Product laptop2 = pcLaptops.newProduct("Dell XPS 15", 1200, 1300, 1400);
+        Product laptop3 = pcLaptops.newProduct("HP Spectre x360", 1300, 1400, 1500);
+        Product laptop4 = pcLaptops.newProduct("Legion Y540", 1000, 1100, 1200);
+        Product laptop5 = pcLaptops.newProduct("Legion 7i", 1250, 1350, 1500);
+
+// For the supplier 'medical'
+        SupplierProfile medical = supplierdirectory.newSupplier(person005);
+        ProductCatalog pcMedical = medical.getProductCatalog();
+        Product medicalEquipment1 = pcMedical.newProduct("Digital Thermometer", 20, 25, 30);
+        Product medicalEquipment2 = pcMedical.newProduct("Blood Pressure Monitor", 30, 35, 40);
+        Product medicalEquipment3 = pcMedical.newProduct("First Aid Kit", 50, 60, 70);
+        Product medicalEquipment4 = pcMedical.newProduct("A- blood 500ml", 200, 250, 300);
+        Product medicalEquipment5 = pcMedical.newProduct("Syringe", 5, 7, 9);
+
+// For the supplier 'hondacars'
+        SupplierProfile hondacars = supplierdirectory.newSupplier(person006);
+        ProductCatalog pcHondaCars = hondacars.getProductCatalog();
+        Product car1 = pcHondaCars.newProduct("Aston Martin DB9", 125000, 135000, 150000);
+        Product car2 = pcHondaCars.newProduct("G wagon", 150000,170000, 190000);
+        Product car3 = pcHondaCars.newProduct("RR phantom", 490000, 500000, 510000);
+        Product car4 = pcHondaCars.newProduct("Ford Mustag gt", 35000, 40000, 45000);
+        Product car5 = pcHondaCars.newProduct("Shelby gt500", 75000, 85000, 90000);       
+          
         
-        
-    
         ProductCatalog pc = mobiles.getProductCatalog();
         Product  newProduct1   =pc.newProduct("iphone 15 pro max", 1000, 1100, 1300);
         Product  newProduct2   =pc.newProduct("iphone 15 pro max", 1000, 1100, 1300);

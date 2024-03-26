@@ -17,6 +17,10 @@ import model.SalesManagement.SalesPersonProfile;
  */
 public class MasterOrderList {
     ArrayList<Order> orders;
+
+    public ArrayList<Order> getOrders() {
+        return orders;
+    }
     MasterOrderReport masterorderreport;
     
     public MasterOrderList(){
