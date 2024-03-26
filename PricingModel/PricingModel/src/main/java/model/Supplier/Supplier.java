@@ -6,6 +6,7 @@
 package model.Supplier;
 
 import java.util.ArrayList;
+import model.Personnel.Person;
 
 import model.ProductManagement.ProductCatalog;
 import model.ProductManagement.ProductSummary;
@@ -16,11 +17,16 @@ import model.ProductManagement.ProductsReport;
  * @author kal bugrara
  */
 public class Supplier {
-    String name;
+
+    public SupplierProfile getSp() {
+        return sp;
+    }
+    SupplierProfile sp;
     ProductCatalog productcatalog;
-   ProductsReport productsreport;
-    public Supplier(String n){
-        name = n;
+    ProductsReport productsreport;
+    public Supplier(Person n){
+        SupplierProfile sp1 = new SupplierProfile(n);
+        this.sp=sp1;
         productcatalog = new ProductCatalog("software");
         
     }
@@ -39,7 +45,7 @@ public class Supplier {
     }
     
     public String getName(){
-        return name;
+        return sp.getPerson().getPersonId();
     }
         public ProductCatalog getProductCatalog(){
         return productcatalog;
@@ -49,7 +55,7 @@ public class Supplier {
     //update supplier product ...
     @Override
    public String toString(){
-       return name;
+       return sp.getPerson().getPersonId();
        
    }
 }

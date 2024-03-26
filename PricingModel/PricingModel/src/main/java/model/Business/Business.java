@@ -7,7 +7,7 @@ package model.Business;
 
 import java.util.ArrayList;
 
-import model.CustomerManagement.ChannelCatalog;
+import model.MarketModel.ChannelCatalog;
 import model.CustomerManagement.CustomerDirectory;
 import model.CustomerManagement.MarketCatalog;
 import model.MarketingManagement.MarketingPersonDirectory;
@@ -20,6 +20,7 @@ import model.ProductManagement.SolutionOfferCatalog;
 import model.SalesManagement.SalesPersonDirectory;
 import model.Supplier.Supplier;
 import model.Supplier.SupplierDirectory;
+import model.Supplier.SupplierProfile;
 import model.UserAccountManagement.UserAccountDirectory;
 
 /**
@@ -77,7 +78,7 @@ public class Business {
     }
 
     public ProductsReport getSupplierPerformanceReport(String n) {
-        Supplier supplier = suppliers.findSupplier(n);
+        SupplierProfile supplier = suppliers.findSupplier(n);
         if (supplier == null) {
             return null;
         }

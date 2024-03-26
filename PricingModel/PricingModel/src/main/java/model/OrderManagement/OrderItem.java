@@ -21,18 +21,18 @@ public class OrderItem {
         selectedproduct = p;
         p.addOrderItem(this); //make sure product links back to the item
         quantity = q;
-        this.actualPrice = paidprice;
+        this.actualPrice = paidprice;   
     }
 
     public int getOrderItemTotal() {
         return actualPrice * quantity;
     }
-
+    
 //The following calculates what the price gain would have been if products were sold at target price
     public int getOrderItemTargetTotal() {
         return selectedproduct.getTargetPrice() * quantity;
     }
-
+    
     //returns positive if seller is making higher margin than target
     //returns negative if seller is making lower margin than target
     //otherwise zero meaning neutral
@@ -78,5 +78,8 @@ public class OrderItem {
     public int getQuantity() {
         return quantity;
     }
-    
+    @Override
+    public String toString(){
+        return selectedproduct.toString();
+    }
 }

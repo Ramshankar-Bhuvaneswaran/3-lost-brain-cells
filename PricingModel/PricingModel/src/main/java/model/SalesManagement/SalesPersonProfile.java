@@ -25,6 +25,7 @@ public class SalesPersonProfile extends Profile {
         salesorders = new ArrayList();
 
     }
+    
     public void addSalesOrder(Order o){
         salesorders.add(o);
     }

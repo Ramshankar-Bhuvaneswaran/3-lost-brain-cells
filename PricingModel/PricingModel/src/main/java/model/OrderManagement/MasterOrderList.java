@@ -17,19 +17,15 @@ import model.SalesManagement.SalesPersonProfile;
  */
 public class MasterOrderList {
     ArrayList<Order> orders;
+
+    public ArrayList<Order> getOrders() {
+        return orders;
+    }
     MasterOrderReport masterorderreport;
     
     public MasterOrderList(){
         orders = new ArrayList();
        
-    }
-    
-    public Order newOrder(CustomerProfile cp){
-        Order o= new Order(cp);
-        orders.add(o);
-        return o;
-            
- 
     }
     public Order newOrder(CustomerProfile cp, SalesPersonProfile spp){
         Order o= new Order(cp, spp);
@@ -38,6 +34,16 @@ public class MasterOrderList {
             
  
     }
+    
+    
+    public Order newOrder(CustomerProfile cp){
+        Order o= new Order(cp);
+        orders.add(o);
+        return o;
+            
+ 
+    }
+    
     
     public MasterOrderReport generateMasterOrderReport(){
     masterorderreport = new MasterOrderReport();

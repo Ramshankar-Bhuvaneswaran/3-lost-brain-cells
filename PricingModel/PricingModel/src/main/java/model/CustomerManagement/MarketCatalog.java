@@ -5,12 +5,21 @@
  */
 package model.CustomerManagement;
 
+import java.util.ArrayList;
+import model.Business.Business;
+import model.MarketModel.Market;
+
 /**
  *
  * @author kal bugrara
  */
 public class MarketCatalog {
-    
-//    ArrayList<Market> markets;
-    
+    Business business;
+    ArrayList<Market> markets;
+    public MarketCatalog(Business d) {
+
+        business = d;
+        markets = new ArrayList();
+
+    }
 }
