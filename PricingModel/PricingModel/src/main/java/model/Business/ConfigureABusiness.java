@@ -39,15 +39,15 @@ public class ConfigureABusiness {
     
     PersonDirectory persondirectory = business.getPersonDirectory();
     
-        Person person001 = persondirectory.newPerson("John Smith");
-        Person person002 = persondirectory.newPerson("Will Smith");
-        Person person003 = persondirectory.newPerson("Steve Smith");        
-        Person person004 = persondirectory.newPerson("Emily Johnson");
-        Person person005 = persondirectory.newPerson("Michael Brown");
-        Person person006 = persondirectory.newPerson("Samantha Williams");
-        Person person007 = persondirectory.newPerson("Daniel Martinez");
-        Person person008 = persondirectory.newPerson("Sarah Davis");
-        Person person009 = persondirectory.newPerson("Kevin Wilson");
+        Person person001 = persondirectory.newPerson("John");
+        Person person002 = persondirectory.newPerson("Will");
+        Person person003 = persondirectory.newPerson("Steve");        
+        Person person004 = persondirectory.newPerson("tom");
+        Person person005 = persondirectory.newPerson("rom");
+        Person person006 = persondirectory.newPerson("Sam");
+        Person person007 = persondirectory.newPerson("Dan");
+        Person person008 = persondirectory.newPerson("Davis");
+        Person person009 = persondirectory.newPerson("Kev");
         Person person010 = persondirectory.newPerson("Amanda Taylor");
         Person person011 = persondirectory.newPerson("Robert Lee");
         Person person012 = persondirectory.newPerson("Jessica Garcia");
@@ -55,10 +55,7 @@ public class ConfigureABusiness {
         Person person014 = persondirectory.newPerson("Ashley Lopez");
         Person person015 = persondirectory.newPerson("Matthew Perez");
         Person person016 = persondirectory.newPerson("Lauren Hernandez");
-        Person person017 = persondirectory.newPerson("Ryan Gonzalez");
-        Person person018 = persondirectory.newPerson("Taylor Flores");
-        Person person019 = persondirectory.newPerson("Justin Nguyen");
-        Person person020 = persondirectory.newPerson("Hannah Kim");
+        
 
 
         EmployeeDirectory employeedirectory = business.getEmployeeDirectory();
@@ -68,11 +65,11 @@ public class ConfigureABusiness {
         SupplierProfile mobiles = supplierdirectory.newSupplier(person002);
         
         SalesPersonDirectory spd =business.getSalesPersonDirectory();
-        SalesPersonProfile salesperson1 = spd.newSalesPersonProfile(person020);
+        SalesPersonProfile salesperson1 = spd.newSalesPersonProfile(person016);
         
         
       
-        SupplierProfile supplier2 = supplierdirectory.newSupplier(person003);
+        SupplierProfile supplier2 = supplierdirectory.newSupplier(person005);
         
         
     
@@ -102,7 +99,7 @@ public class ConfigureABusiness {
         
         order1.newOrderItem(newProduct1,1050 ,3);
         
-        
+            
         
         
 
